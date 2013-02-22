@@ -1,0 +1,4 @@
+LD_LIBRARY_PATH=/home/marijons/lib/systemc-2.3.0/lib-linux64
+LD_LIBRARY_PATH=/home/marijons/lib/systemc-2.3.0/lib-linux64:/home/marijons/lib/systemc-2.3.0/lib-linux64
+C_INCLUDE_PATH=///
+C_INCLUDE_PATH=///:/home/marijons/lib/systemc-2.3.0/include

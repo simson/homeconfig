@@ -1,0 +1,76 @@
+#add ~/bin to PATH
+export PATH=$PATH:$HOME/bin/
+#add simple scalar to path
+export PATH=$PATH:$HOME/bin
+export EDITOR="vim"
+
+#Alias temporaire stage
+
+export PAPERWORK="$HOME/Stage/PaperWork"
+export NOTES="$PAPERWORK/Notes"
+export PAPERS="$PAPERWORK/Papers"
+alias glo="$EDITOR $NOTES/Glossaire/glossary_entries.inc.tex"
+alias jour="$EDITOR $NOTES/Journal/Journal_de_Bord"
+alias note="cd $NOTES; $EDITOR ."
+alias sota="$EDITOR $NOTES/SOTA/stateoftheart.inc.tex"
+alias rapport="$EDITOR $PAPERWORK/Rapport/rapport.tex"
+alias cmprap="cd  $PAPERWORK/Rapport/ ; ./Rapport.sh; evince rapport.pdf 2> /dev/null &"
+alias bib="$EDITOR $PAPERWORK/Papers/library.bib"
+#Alias package
+alias upgrade='sudo apt-get update && sudo apt-get upgrade && sudo apt-get clean'
+alias update='sudo apt-get update'
+alias search='apt-cache search'
+alias install='sudo apt-get install'
+
+# une commande fréquemment utilisée
+alias ll='ls -li'
+
+extract () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
+
+
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+
+
+
+alias vmi='vim'                                                 
+alias ivm='vim'
+alias cim='vim'
+alias bim='vim'
+alias vi='vim'
+
+
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+#SystemC
+export SYSTEMCROOT=$HOME/bin/systemc-2.3.0/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/bin/systemc-2.3.0/lib-linux64/
+alias homeconfig='git --git-dir=/home/marijons/.homeconfig.git/ --work-tree=/home/marijons'
