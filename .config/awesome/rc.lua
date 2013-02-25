@@ -17,6 +17,10 @@ function start_daemon(dae)
 	end
 end
 
+procs = {"gnome-settings-daemon", "nm-applet", "gnome-sound-applet"}
+for k = 1, #procs do
+	start_daemon(procs[k])
+end
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -83,7 +87,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ "Mail", "Musique", "Article", "Code", "Code", 6, 7, 8, 9 }, s, layouts[1])
 end
 -- }}}
 
