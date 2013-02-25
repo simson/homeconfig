@@ -394,6 +394,32 @@ end)
 )
 
 
+ -- Get a relative tag number
+ function getrelativetag(delta, screen)
+     return (awful.tag.getidx(selected) + delta - 1) % #tags[screen] + 1
+ end
+ 
+ -- Move the focused window to the next tag
+ function movetonexttag(delta,follow)
+     local stags = {}
+     if client.focus then
+         stags = tags[client.focus.screen]
+         awful.client.movetotag(stags[getrelativetag(delta, 1)])
+     else
+         stags = tags[1]
+     end
+     if follow then
+         awful.tag.viewonly(stags[getrelativetag(delta, 1)])
+    end
+ end
+ 
+ -- Set the key bindings
+clientkeys = awful.util.table.join(clientkeys,
+     awful.key({ "Mod4", "Shift" }, "Left",  function () movetonexttag(-1,true) end),
+     awful.key({ "Mod4", "Shift" }, "Right", function () movetonexttag( 1,true) end),
+     awful.key({ "Mod4", "Control" }, "Left",  function () movetonexttag(-1,false) end),
+     awful.key({ "Mod4", "Control" }, "Right", function () movetonexttag( 1,false) end)
+ )
 
 
 
