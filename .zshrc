@@ -36,6 +36,8 @@ alias grep='grep --color=auto'
 setopt autocd
 export EDITOR=/usr/bin/vim
 
+bindkey -v
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
