@@ -382,21 +382,19 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 -- }}}
 
--- User  defined keys
-clientkeys = awful.util.table.join(clientkeys,
-awful.key({ modkey, "Control" , "Shift" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
-awful.key({ modkey, "Shift"   }, "n", 
-function()
-    local tag = awful.tag.selected()
-    for i=1, #tag:clients() do
-        if tag:clients()[i].minimized == true then
-            tag:clients()[i].minimized=false
-            tag:clients()[i]:redraw()
-        end
-    end
-end)
-)
 
+function unminimized()
+    tag = awful.tag.selected()
+    i= 1
+    while ( i <= #tag:clients() ) do
+        if tag:clients()[i].minimized == true then
+            tag:clients()[i].minimized = false
+            tag:clients()[i]:redraw()
+            return
+        end
+        i = i + 1
+    end
+end
 
  -- Get a relative tag number
  function getrelativetag(delta, screen)
@@ -422,12 +420,15 @@ end)
                      title = title,
                      text = message })
  end
+
  -- Set the key bindings
 clientkeys = awful.util.table.join(clientkeys,
      awful.key({ "Mod4", "Shift" }, "Left",  function () movetonexttag(-1,true) end),
      awful.key({ "Mod4", "Shift" }, "Right", function () movetonexttag( 1,true) end),
      awful.key({ "Mod4", "Control" }, "Left",  function () movetonexttag(-1,false) end),
-     awful.key({ "Mod4", "Control" }, "Right", function () movetonexttag( 1,false) end)
+     awful.key({ "Mod4", "Control" }, "Right", function () movetonexttag( 1,false) end),
+     awful.key({ modkey, "Control" , "Shift" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+     awful.key({ modkey, "Shift"   }, "n", function()    unminimized() ;  end )
  )
 
 
