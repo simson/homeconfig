@@ -417,6 +417,11 @@ end)
     end
  end
  
+ function NotificationWarn(title,message)
+                    naughty.notify({ preset = naughty.config.presets.critical,
+                     title = title,
+                     text = message })
+ end
  -- Set the key bindings
 clientkeys = awful.util.table.join(clientkeys,
      awful.key({ "Mod4", "Shift" }, "Left",  function () movetonexttag(-1,true) end),
