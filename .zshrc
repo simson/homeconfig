@@ -70,20 +70,6 @@ bindkey '^[[6~' history-beginning-search-forward # PgDown for history search
 
 
 
-# Finally, make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid.
-
-function zle-line-init () {
-    echoti smkx
-}
-function zle-line-finish () {
-    echoti rmkx
-}
-
-zle -N zle-line-init
-zle -N zle-line-finish
-
-
 function canonpath ()
 {
     echo $(cd $(dirname $1); pwd -P)/$(basename $1)
