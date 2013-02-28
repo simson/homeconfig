@@ -17,7 +17,7 @@ function start_daemon(dae)
 	end
 end
 
-procs = {"gnome-settings-daemon", "nm-applet", "gnome-sound-applet"}
+procs = {"gnome-settings-daemon", "nm-applet", "gnome-sound-applet","dbus-launch --sh-syntax --exit-with-session"}
 for k = 1, #procs do
 	start_daemon(procs[k])
 end
