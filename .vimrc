@@ -3,7 +3,9 @@ set mouse=a             " hold shift to copy xterm
 set ttymouse=xterm2     " necessary for gnu screen & mouseet mouse=a
 set enc=utf-8
 set fileencoding=utf-8
-colorscheme wombat256
+syntax enable
+set background=dark
+
 cabbrev e <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'tabedit' : 'e')<CR>
 cabbrev bn <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'tabNext' : 'bn')<CR>
 cabbrev nb <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'tabNext' : 'bn')<CR>
@@ -108,3 +110,6 @@ autocmd FileType tex set textwidth=80
 
 
 set completeopt=longest,menuone
+execute pathogen#infect()
+"let g:solarized_termcolors=256
+colorscheme solarized
