@@ -1,5 +1,5 @@
 [[ $- != *i* ]] && return
-[[ $TERM != screen* ]] && exec tmux attach
+[[ $TERM != screen* ]] && exec ~/bin/choose_tmux.sh
 
 autoload -U compinit
 compinit
@@ -63,6 +63,19 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init () {
+        printf '%s' ${terminfo[smkx]}
+    }
+    function zle-line-finish () {
+        printf '%s' ${terminfo[rmkx]}
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
 
 
 bindkey '^R' history-incremental-search-backward # ctrl-r
