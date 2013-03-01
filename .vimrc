@@ -46,7 +46,8 @@ set ruler
 set nu
  
  
-set guifont=DejaVu\ Sans\ Mono\ 10
+"set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=Source\ Code\ Pro\ Black\ for\ Powerline\ 10
  
 " manual folding
 set foldmethod=marker
@@ -113,3 +114,8 @@ set completeopt=longest,menuone
 execute pathogen#infect()
 "let g:solarized_termcolors=256
 colorscheme solarized
+"Powerline
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+"let g:Powerline_symbols = 'unicode'
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
