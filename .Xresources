@@ -1,27 +1,32 @@
-xterm*faceName: xft:Ubuntu Mono:pixelsize=13
+!Xterm*faceName: Menlo for Powerline:pixelsize=13
+xterm*faceName: xft:DejaVu Sans Mono for Powerline:pixelsize=13
 !*customization: -color
-XTerm*termName:  xterm-256color
-!!lightmonad: 3C3 = 6 combinations
-!*background: #fcffdd
-!*foreground: #5e5e58
-!*cursorColor: #5e5e58
-!*color0: #666666
-!*color1: #ba3e73
-!*color2: #73ba3e
-!*color3: #ba733e
-!*color4: #3e73ba
-!*color5: #733eba
-!*color6: #3eba73
-!*color7: #aaaaaa
-!*color8: #434343
-!*color9: #87284d
-!*color10: #4d8728
-!*color11: #874d28
-!*color12: #284d87
-!*color13: #4d2887
-!*color14: #28874d
-!*color15: #8a8a8a
-!
+xterm*termName:  xterm-256color
+xterm*utf8: 2
+xterm*font: xft:DejaVu Sans Mono for Powerline:regular:size=12
+xterm*imFont: xft:DejaVu Sans Mono for Powerline:regular:size=12
+xterm*boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=12
+xterm*italicFont: xft:DejaVu Sans Mono for Powerline:italic:size=12
+xterm*boldItalicFont: xft:DejaVu Sans Mono for Powerline:bold:italic:size=12Rxvt*depth: 32
+
+
+! git clone git://gist.github.com/1630581.git ~/.fonts/powerline/dejavu
+
+
+URxvt.scrollBar: false
+URxvt*font: xft:DejaVu Sans Mono for Powerline:regular:size=10
+URxvt*imFont: xft:DejaVu Sans Mono for Powerline:regular:size=10
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=10
+URxvt*italicFont: xft:DejaVu Sans Mono for Powerline:italic:size=10
+URxvt*boldItalicFont: xft:DejaVu Sans Mono for Powerline:bold:italic:size=12
+URxvt*depth: 32
+! Xft settings ---------------------------------------------------------------
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
 !Solarized color scheme for the X Window System
 !
 ! http://ethanschoonover.com/solarized

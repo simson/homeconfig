@@ -17,7 +17,7 @@ function start_daemon(dae)
 	end
 end
 
-procs = {"gnome-settings-daemon", "nm-applet", "gnome-sound-applet","dbus-launch --sh-syntax --exit-with-session"}
+procs = {"gnome-settings-daemon", "nm-applet", "gnome-sound-applet", "xscreensaver -nosplash"}
 for k = 1, #procs do
 	start_daemon(procs[k])
 end
@@ -53,7 +53,7 @@ end
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -427,7 +427,7 @@ clientkeys = awful.util.table.join(clientkeys,
      awful.key({ "Mod4", "Shift" }, "Right", function () movetonexttag( 1,true) end),
      awful.key({ "Mod4", "Control" }, "Left",  function () movetonexttag(-1,false) end),
      awful.key({ "Mod4", "Control" }, "Right", function () movetonexttag( 1,false) end),
-     awful.key({ modkey, "Control" , "Shift" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+     awful.key({ "Mod4", "Control", "Shift" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
      awful.key({ modkey, "Shift"   }, "n", function()    unminimized() ;  end )
  )
 
