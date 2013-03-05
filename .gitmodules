@@ -1,0 +1,6 @@
+[submodule ".fonts/powerline"]
+	path = .fonts/powerline
+	url = https://github.com/Lokaltog/powerline-fonts.git
+[submodule ".vim/bundle/webapi-vim"]
+	path = .vim/bundle/webapi-vim
+	url = https://github.com/mattn/webapi-vim.git
