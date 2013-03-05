@@ -1,3 +1,21 @@
 [submodule ".vim/bundle/webapi-vim"]
 	path = .vim/bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+[submodule ".fonts/ubuntu-mono-powerline-tff"]
+	path = .fonts/ubuntu-mono-powerline-tff
+	url = https://github.com/pdf/ubuntu-mono-powerline-ttf.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/googletasks-vim"]
+	path = .vim/bundle/googletasks-vim
+	url = https://github.com/mattn/googletasks-vim.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule ".fonts/ubuntu-mono-powerline-ttf"]
+	path = .fonts/ubuntu-mono-powerline-ttf
+	url = https://github.com/pdf/ubuntu-mono-powerline-ttf.git
