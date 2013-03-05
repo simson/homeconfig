@@ -1,0 +1,15 @@
+
+[Desktop Entry]
+
+Exec=/usr/bin/awesome
+
+Name=Awesome
+
+NoDisplay=true
+
+StartupNotify=false
+
+Type=Application
+
+Version=1.0
+
