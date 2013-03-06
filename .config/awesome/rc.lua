@@ -17,10 +17,10 @@ function start_daemon(dae)
 	end
 end
 
-procs = {"gnome-settings-daemon", "nm-applet", "gnome-sound-applet", "xscreensaver -nosplash"}
-for k = 1, #procs do
-	start_daemon(procs[k])
-end
+-- procs = {"gnome-settings-daemon", "nm-applet", "gnome-sound-applet", "xscreensaver -nosplash"}
+-- for k = 1, #procs do
+-- 	start_daemon(procs[k])
+-- end
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -104,7 +104,7 @@ end
      { "manual", terminal .. " -e man awesome", freedesktop.utils.lookup_icon({ icon = 'help' }) },
      { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua", freedesktop.utils.lookup_icon({ icon = 'package_settings' }) },
      { "restart", awesome.restart, freedesktop.utils.lookup_icon({ icon = 'gtk-refresh' }) },
-     { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'gtk-quit' }) },
+     { "quit", "gnome-session-quit", freedesktop.utils.lookup_icon({ icon = 'gtk-quit' }) },
      {"Log out", '/home/marijosi/bin/shutdown_dialog.sh'}
   }
   table.insert(menu_items, { "awesome", myawesomemenu, beautiful.awesome_icon })
