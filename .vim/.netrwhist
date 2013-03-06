@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/marijons/homeconfig/.vim/bundle/vim-powerline'
 let g:netrw_dirhist_2='/home/marijons/homeconfig/.oh-my-zsh/custom'
 let g:netrw_dirhist_3='/home/marijons/.fonts'
+let g:netrw_dirhist_4='/home/marijons/homeconfig/.vim/bundle/vim-latex/ftplugin'
