@@ -453,17 +453,19 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
+                     size_hints_honor = false, --board de fenetre avec xterm et urxvt
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
-      properties = { floating = true } },
+      properties = { floating = false } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
-}
+     { rule = { class = "Firefox" },
+       properties = { tag = tags[1][2] } },
+
+       }
 -- }}}
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
