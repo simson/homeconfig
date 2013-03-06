@@ -19,3 +19,6 @@
 [submodule ".fonts/ubuntu-mono-powerline-ttf"]
 	path = .fonts/ubuntu-mono-powerline-ttf
 	url = https://github.com/pdf/ubuntu-mono-powerline-ttf.git
+[submodule ".vim/bundle/vim-latex"]
+	path = .vim/bundle/vim-latex
+	url = https://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
