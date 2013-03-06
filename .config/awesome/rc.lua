@@ -453,7 +453,7 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
-                     size_hints_honor = false, --board de fenetre avec xterm et urxvt
+--                     size_hints_honor = false, --board de fenetre avec xterm et urxvt
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
