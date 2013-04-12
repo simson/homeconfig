@@ -39,12 +39,12 @@ if has("cscope")
 
     " add any cscope database in current directory
     " MM commented the if and elseif stuff below
-    "if filereadable("cscope.out")
-    "    cs add cscope.out  
-    " else add the database pointed to by environment variable 
-    "elseif $CSCOPE_DB != ""
-    "    cs add $CSCOPE_DB
-    "endif
+    if filereadable("cscope.out")
+        cs add cscope.out  
+    "  else add the database pointed to by environment variable 
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
 
     " show msg when any other cscope db added
     set cscopeverbose  
@@ -107,14 +107,14 @@ if has("cscope")
     " can be simulated roughly via:
     "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>	
 
-    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-f>s :tab scs find s <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-f>g :tab scs find g <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-f>c :tab scs find c <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-f>t :tab scs find t <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-f>e :tab scs find e <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-f>f :tab scs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <C-f>i :tab scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+    nmap <C-f>d :tab scs find d <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Hitting CTRL-space *twice* before the search type does a vertical 
