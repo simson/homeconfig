@@ -104,8 +104,8 @@ end
      { "manual", terminal .. " -e man awesome", freedesktop.utils.lookup_icon({ icon = 'help' }) },
      { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua", freedesktop.utils.lookup_icon({ icon = 'package_settings' }) },
      { "restart", awesome.restart, freedesktop.utils.lookup_icon({ icon = 'gtk-refresh' }) },
-     { "quit", "gnome-session-quit", freedesktop.utils.lookup_icon({ icon = 'gtk-quit' }) },
-     {"Log out", '/home/marijosi/bin/shutdown_dialog.sh'}
+     { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'gtk-quit' }) },
+     { "Log out", '/home/marijosi/bin/shutdown_dialog.sh'}
   }
   table.insert(menu_items, { "awesome", myawesomemenu, beautiful.awesome_icon })
   table.insert(menu_items, { "open terminal", terminal, freedesktop.utils.lookup_icon({icon = 'terminal'}) })
@@ -459,11 +459,11 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = false } },
+--    { rule = { class = "gimp" },
+  --    properties = { floating = false } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-     { rule = { class = "Firefox" },
-       properties = { tag = tags[1][2] } },
+    -- { rule = { class = "Firefox" },
+      -- properties = { tag = tags[1][2] } },
 
        }
 -- }}}

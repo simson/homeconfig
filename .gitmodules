@@ -25,3 +25,12 @@
 [submodule ".vim/bundle/clang_complete"]
 	path = .vim/bundle/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete.git
+[submodule ".vim/bundle/Doxygen"]
+	path = .vim/bundle/Doxygen
+	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
+[submodule ".vim/bundle/c.vim"]
+	path = .vim/bundle/c.vim
+	url = https://github.com/vim-scripts/c.vim.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/vim-scripts/The-NERD-tree.git

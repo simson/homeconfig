@@ -119,3 +119,41 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 "let g:Powerline_symbols = 'unicode'
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
+
+
+"Persistent undo
+set undofile                " Save undo's after file closes
+set undodir=~/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+"Complete" Avoid freezing on offending code
+inoremap <c-space> <c-x><c-o>
+
+let g:clang_user_options='|| exit 0'
+let g:clang_close_preview=1
+set conceallevel=2
+set concealcursor=vin
+let g:clang_snippets=1
+let g:clang_conceal_snippets=1
+" The single one that works with clang_complete
+let g:clang_snippets_engine='clang_complete'
+"
+" " Complete options (disable preview scratch window, longest removed to aways
+" " show menu)
+ set completeopt=menu,menuone
+"
+" " Limit popup menu height
+set pumheight=20
+
+"Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! %!sudo tee > /dev/null %
+
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="Siméon Marijon"
+let g:DoxygenToolkit_licenseTag="My own license"
+
+map <leader>n :NERDTreeToggle<CR>
